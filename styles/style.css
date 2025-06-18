@@ -241,3 +241,21 @@ footer {
   text-align: center;
   padding: 20px 0;
 }
+/* In styles/style.css */
+.emergency-section-image {
+  display: block;
+  margin: 0 auto 20px auto; /* Centers the image and adds space below */
+  max-width: 600px;         /* Adjust as needed */
+  width: 100%;              /* Makes the image responsive within its max-width */
+  height: auto;             /* Maintains aspect ratio */
+  border-radius: 8px;       /* Optional: adds rounded corners */
+}
+/* Add this to your styles/style.css */
+.services-main-image {
+  display: block;
+  margin: 0 auto 30px auto; /* Centers the image and adds space below */
+  max-width: 700px;         /* Adjust as needed */
+  width: 100%;              /* Makes the image responsive within its max-width */
+  height: auto;             /* Maintains aspect ratio */
+  border-radius: 8px;       /* Optional: adds rounded corners */
+}
