@@ -85,7 +85,8 @@ header nav ul li a:hover, header nav ul li a.active {
 
 /* --- Hero Section (Homepage) --- */
 .hero {
-  background: url('https://via.placeholder.com/1500x600.png?text=Ras+Desta+Damtew+Hospital') no-repeat center center/cover;
+  /* Background image for the hero section */
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/rasdesta-buildind.jpg') no-repeat center center/cover;
   color: var(--white-color);
   height: 80vh;
   display: flex;
@@ -94,8 +95,6 @@ header nav ul li a:hover, header nav ul li a.active {
   align-items: center;
   text-align: center;
   padding: 0 20px;
-  background-color: rgba(0,0,0,0.5);
-  background-blend-mode: overlay;
 }
 
 .hero h1 {
