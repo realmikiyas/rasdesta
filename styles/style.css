@@ -258,3 +258,41 @@ footer {
   height: auto;             /* Maintains aspect ratio */
   border-radius: 8px;       /* Optional: adds rounded corners */
 }
+
+/* --- Personal Data Form --- */
+.data-form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 30px;
+  background: var(--light-gray);
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box; /* Ensures padding doesn't affect width */
+  font-size: 1rem;
+}
+
+.data-form .btn {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.1rem;
+}
+}
