@@ -295,4 +295,38 @@ footer {
   padding: 15px;
   font-size: 1.1rem;
 }
+
+/* --- Social Media Header --- */
+.social-media-header {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.social-media-header a {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.social-media-header a:hover {
+  color: var(--secondary-color);
+}
+
+/* --- Social Media Footer --- */
+.social-media-footer {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.social-media-footer a {
+  color: var(--white-color);
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.social-media-footer a:hover {
+  color: var(--light-gray);
 }
