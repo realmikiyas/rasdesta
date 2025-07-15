@@ -45,23 +45,127 @@
     <main>
         <section class="section">
             <div class="container">
-                <h1 class="section-title">Patient Personal Data</h1>
-                <p style="text-align: center; max-width: 600px; margin: 0 auto 40px auto;">Please enter your credentials to access your appointment information and personal data.</p>
+                <h1 class="section-title">Appointment Check Module</h1>
+                <div style="margin-bottom: 20px; display: flex; gap: 10px; flex-wrap: wrap;">
+                    <button class="btn">Check New Appointment</button>
+                    <button class="btn">Filter Appointments</button>
+                    <button class="btn">Refresh</button>
+                </div>
+                <div class="table-container" style="margin-bottom: 32px;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Appointment ID</th>
+                                <th>Patient Name</th>
+                                <th>EMR Number</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Doctor/Specialist</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Appointment rows will be dynamically inserted here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
 
-                <form class="data-form">
+        <section class="section alternate-bg">
+            <div class="container">
+                <h2 class="section-title">Appointment</h2>
+                <form class="data-form" style="max-width: 400px; margin: 0 auto 32px auto;">
                     <div class="form-group">
-                        <label for="username">User Name</label>
-                        <input type="text" id="username" name="username" required>
+                        <label for="emr-number">EMR Number</label>
+                        <input type="text" id="emr-number" name="emr-number" placeholder="Enter your EMR number" required>
                     </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" id="password" name="password" required>
+                    <button type="submit" class="btn">Check Your Appointment</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Patient Data Access Request Form</h2>
+                <form class="data-form" style="max-width: 600px; margin: 0 auto;">
+                    <fieldset style="margin-bottom: 20px;">
+                        <legend>Requester Information</legend>
+                        <div class="form-group">
+                            <label for="requester-name">Full Name</label>
+                            <input type="text" id="requester-name" name="requester-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="requester-role">Role/Department</label>
+                            <input type="text" id="requester-role" name="requester-role" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="requester-email">Contact Email</label>
+                            <input type="email" id="requester-email" name="requester-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="requester-phone">Phone Number</label>
+                            <input type="tel" id="requester-phone" name="requester-phone" required>
+                        </div>
+                    </fieldset>
+                    <fieldset style="margin-bottom: 20px;">
+                        <legend>Patient Information</legend>
+                        <div class="form-group">
+                            <label for="patient-name">Patient Name</label>
+                            <input type="text" id="patient-name" name="patient-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="patient-emr">EMR Number</label>
+                            <input type="text" id="patient-emr" name="patient-emr">
+                        </div>
+                        <div class="form-group">
+                            <label for="patient-dob">Date of Birth</label>
+                            <input type="date" id="patient-dob" name="patient-dob">
+                        </div>
+                    </fieldset>
+                    <fieldset style="margin-bottom: 20px;">
+                        <legend>Reason for Access</legend>
+                        <div class="form-group">
+                            <label for="access-reason">Reason</label>
+                            <select id="access-reason" name="access-reason" required>
+                                <option value="">Select a reason</option>
+                                <option value="treatment">Treatment Planning</option>
+                                <option value="review">Record Review</option>
+                                <option value="billing">Billing Inquiry</option>
+                                <option value="research">Research</option>
+                                <option value="legal">Legal Request</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="access-details">Detailed Explanation</label>
+                            <textarea id="access-details" name="access-details" rows="3" required></textarea>
+                        </div>
+                    </fieldset>
+                    <fieldset style="margin-bottom: 20px;">
+                        <legend>Scope of Access</legend>
+                        <div class="form-group">
+                            <label>Data Types</label><br>
+                            <input type="checkbox" id="medical-history" name="scope" value="Medical History"> <label for="medical-history">Medical History</label>
+                            <input type="checkbox" id="lab-results" name="scope" value="Lab Results"> <label for="lab-results">Lab Results</label>
+                            <input type="checkbox" id="imaging-reports" name="scope" value="Imaging Reports"> <label for="imaging-reports">Imaging Reports</label>
+                            <input type="checkbox" id="medications" name="scope" value="Medications"> <label for="medications">Medications</label>
+                            <input type="checkbox" id="progress-notes" name="scope" value="Progress Notes"> <label for="progress-notes">Progress Notes</label>
+                            <input type="checkbox" id="billing-info" name="scope" value="Billing Information"> <label for="billing-info">Billing Information</label>
+                        </div>
+                        <div class="form-group">
+                            <label>Date Range</label><br>
+                            <input type="radio" id="full-record" name="date-range" value="Full Record" checked> <label for="full-record">Full Record</label>
+                            <input type="radio" id="specific-dates" name="date-range" value="Specific Dates"> <label for="specific-dates">Specific Dates</label>
+                            <input type="date" id="date-from" name="date-from" style="margin-left: 10px;"> to <input type="date" id="date-to" name="date-to">
+                        </div>
+                    </fieldset>
+                    <p style="font-size: 0.95em; color: #666; margin-bottom: 16px;">Access requests are subject to review and approval by the Admin/HIPAA Officer.</p>
+                    <div style="display: flex; gap: 10px;">
+                        <button type="submit" class="btn">Submit Request</button>
+                        <button type="reset" class="btn btn-secondary">Cancel</button>
                     </div>
-                    <div class="form-group">
-                        <label for="card-number">Insert Card Number</label>
-                        <input type="text" id="card-number" name="card-number" placeholder="Enter your hospital card number" required>
-                    </div>
-                    <button type="submit" class="btn">Check Appointment</button>
                 </form>
             </div>
         </section>
@@ -80,5 +184,15 @@
         </div>
     </footer>
 
+    <style>
+        .btn-small {
+            font-size: 0.85em;
+            padding: 4px 10px;
+            margin: 2px;
+        }
+        .alternate-bg {
+            background: #f9f9f9;
+        }
+    </style>
 </body>
 </html>
